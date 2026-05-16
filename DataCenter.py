@@ -1,0 +1,29 @@
+"""
+
+------------------------------------------------ Link for the challenge: https://codeforces.com/contest/1250/problem/F ------------------------------------------------
+
+You are developing a project to build a new data center. The data center will be a rectangle with an area of exactly n square meters. Each side of the data center must be an integer.
+
+Your goal is to minimize the impact of the external environment on the data center. 
+For this reason, you want to minimize the length of the perimeter of the data center (that is, the sum of the lengths of its four sides).
+
+What is the minimum perimeter of a rectangular data center with an area of exactly n square meters, if the lengths of all its sides must be integers?
+
+Input
+The first and only line of the input contains an integer n (1 ≤ n ≤ 10^5), where n is the area of the data center in square meters.
+
+Output
+Print the required minimum perimeter in meters.
+
+Input:
+36
+
+Output:
+24
+"""
+import math
+area = int(input())
+for i in range(int(math.sqrt(area)), 0, -1):
+    if area % i == 0:
+        print(2 * (i + area // i))
+        break
